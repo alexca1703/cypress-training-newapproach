@@ -5,10 +5,12 @@
 # gitignore template for the CypressIO, browser test framework
 # website: https://www.cypress.io/
 
+cypress/integration/examples/*
 cypress/results/*
 cypress/reports/*
 cypress/screenshots/*
 cypress/videos/*
+node_modules/*
 cypress/e2e/1-getting-started/*
 cypress/e2e/2-advanced-examples/*
 
