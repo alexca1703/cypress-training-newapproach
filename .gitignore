@@ -10,7 +10,6 @@ cypress/results/*
 cypress/reports/*
 cypress/screenshots/*
 cypress/videos/*
-node_modules/*
 cypress/e2e/1-getting-started/*
 cypress/e2e/2-advanced-examples/*
 
@@ -23,6 +22,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+node_modules/*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
