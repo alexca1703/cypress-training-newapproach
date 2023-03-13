@@ -1,0 +1,25 @@
+{
+  "name": "cypress-training",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexca1703/cypress-training-newapproach.git"
+  },
+  "keywords": [
+    "ui-testing",
+    "dojo",
+    "practice",
+    "cypress"
+  ],
+  "author": "Alexander Martinez <alexca1703@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexca1703/cypress-training-newapproach/issues"
+  },
+  "homepage": "https://github.com/alexca1703/cypress-training-newapproach#readme"
+}
