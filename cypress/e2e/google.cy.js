@@ -4,4 +4,3 @@ describe("This is my first cypress test", () => {
       cy.title().should("eq", "Google");
     });
   });
-  
