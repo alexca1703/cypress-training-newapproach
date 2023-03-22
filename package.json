@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/alexca1703/cypress-training-newapproach#readme",
   "devDependencies": {
-    "cypress": "^12.7.0"
+    "cypress": "^12.7.0",
+    "typescript": "^5.0.2"
   }
 }
