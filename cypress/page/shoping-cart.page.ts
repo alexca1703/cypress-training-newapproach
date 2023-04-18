@@ -10,4 +10,4 @@ class SauceCart{
     }
 }
 
-export{SauceCart}
+export {SauceCart}
