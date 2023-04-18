@@ -1,5 +1,5 @@
 import {SauceContentHomePage, SauceStandardLogin, SauceInventory, AddProductToCart, SauceCart, SauceCheckoutInformation,
-CheckoutOverview, FinishCheckout} from "../page/index";
+  CheckoutOverview, FinishCheckout} from "../page/index";
 
 const menuContentPage = new SauceContentHomePage();
 const LoginPage = new SauceStandardLogin();
