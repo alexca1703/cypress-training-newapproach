@@ -1,15 +1,15 @@
 class FinishCheckout{
 
-    private condition: string;
-    private expectedText: string;
+    private messageElement: string;
+    //private condition: string;
 
     constructor() {
-        this.condition = "have.text";
-        this.expectedText = "Thank you for your order!";
+        this.messageElement = "#contents_wrapper > .checkout_complete_container > h2";
+        //this.condition = "have.text";
     }
 
-    public confirmSuccessfulCheckout(messageElement:string): void {
-        cy.get(messageElement).should(this.condition,this.expectedText); // (12)
+    public confirmSuccessfulCheckout(expectedText:string): void {
+        cy.get(this.messageElement).contains(expectedText); // (12)
     }
 }
 
