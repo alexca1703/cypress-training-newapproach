@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
       "target": "es5",
+      "baseUrl": "https://www.saucedemo.com/",
       "skipLibCheck": true,
       "strict": true,
       "lib": ["es5", "dom"],
