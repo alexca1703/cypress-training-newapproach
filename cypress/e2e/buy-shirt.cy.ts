@@ -19,6 +19,6 @@ describe("Buy a black t-shirt", () => {
     shoppingCartPage.proceedToCheckout(); // (6)
     checkoutInformationPage.enterUserInformation(); // (7)(8)(9)(10)
     checkoutOverviewPage.acceptCheckoutDetails(); // (11)
-    checkoutCompletePage.confirmSuccessfulCheckout("#contents_wrapper > .checkout_complete_container > h2"); // (12)
+    checkoutCompletePage.confirmSuccessfulCheckout("Thank you for your order!"); // (12)
   });
 });
