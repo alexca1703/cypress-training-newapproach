@@ -2,7 +2,7 @@ class SauceCart{
     private checkoutButton: string;
 
     constructor() {
-        this.checkoutButton = "button[id='checkout']";
+        this.checkoutButton = '[data-test="checkout"]';
     }
 
     public proceedToCheckout(): void {

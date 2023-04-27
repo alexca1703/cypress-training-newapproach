@@ -5,10 +5,9 @@ class SauceStandardLogin {
 
 
     constructor() {
-        this.standardUserTextField = ".login-box > form > div > input";
-        this.standardPswrdTextField = ".login-box > form > div > input";
-        this.submitCredentialsButton = "input[type='submit']";
-
+        this.standardUserTextField = '[data-test="username"]';
+        this.standardPswrdTextField = '[data-test="password"]';
+        this.submitCredentialsButton = '[data-test="login-button"]';
     }
 
     public signIn(userName:string, password:string): void {
