@@ -2,11 +2,11 @@ class SauceInventory{
     private shirtSelection: string;
 
     constructor() {
-        this.shirtSelection = "#item_1_title_link";
+        this.shirtSelection = "Bolt T-Shirt";
     }
 
     public openProductDetails(): void {
-        cy.get(this.shirtSelection).click();// (3)
+        cy.contains(this.shirtSelection).click();// (3)
     }
 }
 

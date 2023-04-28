@@ -4,7 +4,7 @@ class AddProductToCart{
     private cartButton: string
 
     constructor() {
-        this.addToCartButton = "#add-to-cart-sauce-labs-bolt-t-shirt";
+        this.addToCartButton = '[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]';
         this.cartButton = "a[class='shopping_cart_link']";
     }
 

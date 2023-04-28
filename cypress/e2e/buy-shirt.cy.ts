@@ -17,7 +17,7 @@ describe("Buy a black t-shirt", () => {
     inventoryPage.openProductDetails();// (3)
     inventoryDetailsPage.addProductToCart(); // (4)(5)
     shoppingCartPage.proceedToCheckout(); // (6)
-    checkoutInformationPage.enterUserInformation(); // (7)(8)(9)(10)
+    checkoutInformationPage.enterUserInformation("Cypress", "Workshop", "00000"); // (7)(8)(9)(10)
     checkoutOverviewPage.acceptCheckoutDetails(); // (11)
     checkoutCompletePage.confirmSuccessfulCheckout("Thank you for your order!"); // (12)
   });

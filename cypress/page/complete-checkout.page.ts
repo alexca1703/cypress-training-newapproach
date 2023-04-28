@@ -3,7 +3,7 @@ class FinishCheckout{
     private messageElement: string;
 
     constructor() {
-        this.messageElement = "#contents_wrapper > .checkout_complete_container > h2";
+        this.messageElement = "h2[class='complete-header']";
     }
 
     public confirmSuccessfulCheckout(expectedText:string): void {

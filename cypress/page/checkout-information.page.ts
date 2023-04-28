@@ -1,28 +1,22 @@
 class SauceCheckoutInformation {
     private firstNameTextField: string;
-    private firstNameValue: string;
     private lastNameTextField: string;
-    private lastNameValue: string;
-    private zipCodeTextField: string;
-    private zipCodeValue: string;
+    private postalCodeTextField: string;
     private continueCheckoutButton: string;
 
 
     constructor() {
-        this.firstNameTextField = "#first-name";
-        this.firstNameValue = "Cypress";
-        this.lastNameTextField = "#last-name";
-        this.lastNameValue = "Workshop";
-        this.zipCodeTextField = "#postal-code";
-        this.zipCodeValue = "00000";
-        this.continueCheckoutButton = "input[id='continue']";
+        this.firstNameTextField = '[data-test="firstName"]';
+        this.lastNameTextField = '[data-test="lastName"]';
+        this.postalCodeTextField = '[data-test="postalCode"]';
+        this.continueCheckoutButton = '[data-test="continue"]';
 
     }
 
-    public enterUserInformation(): void {
-        cy.get(this.firstNameTextField).type(this.firstNameValue);// (7)
-        cy.get(this.lastNameTextField).type(this.lastNameValue);// (8)
-        cy.get(this.zipCodeTextField).type(this.zipCodeValue);// (9)
+    public enterUserInformation(firstNameValue:string, lastNameValue:string, zipCodeValue:string): void {
+        cy.get(this.firstNameTextField).type(firstNameValue);// (7)
+        cy.get(this.lastNameTextField).type(lastNameValue);// (8)
+        cy.get(this.postalCodeTextField).type(zipCodeValue);// (9)
         cy.get(this.continueCheckoutButton).click();// (10)
     }
 }

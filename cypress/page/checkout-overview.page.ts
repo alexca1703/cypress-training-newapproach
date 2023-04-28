@@ -3,7 +3,7 @@ class CheckoutOverview{
     private finishCheckoutButton: string;
 
     constructor() {
-        this.finishCheckoutButton = "button[id='finish']";
+        this.finishCheckoutButton = '[data-test="finish"]';
     }
 
     public acceptCheckoutDetails(): void {
