@@ -3,11 +3,11 @@ class FinishCheckout{
     private messageElement: string;
 
     constructor() {
-        this.messageElement = "Thank you for your order!";
+        this.messageElement = "h2[class='complete-header']";
     }
 
     public confirmSuccessfulCheckout(expectedText:string): void {
-        cy.contains(this.messageElement).should('have.text',expectedText); // (12)
+        cy.get(this.messageElement).should('have.text',expectedText); // (12)
     }
 }
 
