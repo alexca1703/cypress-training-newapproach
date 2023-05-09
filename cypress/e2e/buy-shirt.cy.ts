@@ -10,77 +10,75 @@ const checkoutInformationPage = new SauceCheckoutInformation();
 const checkoutOverviewPage = new CheckoutOverview();
 const checkoutCompletePage = new FinishCheckout();
 
-describe ("Type valid credentials", () => {
+describe("Type valid credentials", () => {
   it("should login successfully at website", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
-    //Assert
+    // Assert
     inventoryPage.checkInventoryUrl("https://www.saucedemo.com/inventory.html");
     inventoryPage.checkProductImageAndText("Sauce Labs Bolt T-Shirt");
   });
 });
 
-describe ("Check items number in shopping cart icon", () => {
+describe("Check items number in shopping cart icon", () => {
   it("should display item(s) ready for buying", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
     inventoryPage.openProductDetails(); // (3)
     inventoryDetailsPage.addProductToCart(); // (4)
-    //Assert
-    inventoryDetailsPage.verifyItemPrice("15.99","$15.99");
+    // Assert
+    inventoryDetailsPage.verifyItemPrice("15.99", "$15.99");
     inventoryDetailsPage.checkRemoveButtonExistance();
     inventoryDetailsPage.checkNumberOfItemsInCart("1");
-
   });
 });
 
-describe ("Remove product item from shopping cart", () => {
+describe("Remove product item from shopping cart", () => {
   it("then display empty shopping cart", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
     inventoryPage.openProductDetails(); // (3)
     inventoryDetailsPage.addProductToCart(); // (4)
-    inventoryDetailsPage.RemoveProductFromCart();
-    //Assert
+    inventoryDetailsPage.removeProductFromCart();
+    // Assert
     inventoryDetailsPage.addToCartButtonExists();
     inventoryDetailsPage.itemsNumberIdentifierExists();
-
   });
 });
 
-describe ("Add Black T-shirt product to Shopping Cart", () => {
+describe("Add Black T-shirt product to Shopping Cart", () => {
   it("should open shopping cart details page", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
     inventoryPage.openProductDetails(); // (3)
     inventoryDetailsPage.addProductToCart(); // (4)
     inventoryDetailsPage.goToCartPage(); // (5)
-    //Assert
+    // Assert
     shoppingCartPage.checkCartUrl("https://www.saucedemo.com/cart.html");
   });
 });
 
-describe ("Confirm checkout to enter user information", () => {
+describe("Confirm checkout to enter user information", () => {
   it("should display name, lastname and zipcode fields", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
@@ -89,7 +87,7 @@ describe ("Confirm checkout to enter user information", () => {
     inventoryDetailsPage.goToCartPage(); // (5)
     shoppingCartPage.proceedToCheckout(); // (6)
 
-    //Assert
+    // Assert
     checkoutInformationPage.checkUserDetailsUrl("https://www.saucedemo.com/checkout-step-one.html");
     checkoutInformationPage.verifyFirstNameFieldExists();
     checkoutInformationPage.verifyLastNameFieldExists();
@@ -99,9 +97,9 @@ describe ("Confirm checkout to enter user information", () => {
 
 describe("Buy a black t-shirt successfully", () => {
   it("then the t-shirt should be bought", () => {
-    //Arrange
+    // Arrange
     menuContentPage.visitMenuContentPage(); // (1)
-    //Action
+    // Action
     loginPage.typeUserName("standard_user"); // (2)
     loginPage.typePassword("secret_sauce"); // (2)
     loginPage.pressSubmitButton(); // (2)
@@ -111,7 +109,7 @@ describe("Buy a black t-shirt successfully", () => {
     shoppingCartPage.proceedToCheckout(); // (6)
     checkoutInformationPage.enterUserInformation("Cypress", "Workshop", "00000"); // (7)(8)(9)(10)
     checkoutOverviewPage.acceptCheckoutDetails(); // (11)
-    //assert
+    // assert
     checkoutCompletePage.confirmSuccessfulCheckout("Thank you for your order!"); // (12)
   });
 });

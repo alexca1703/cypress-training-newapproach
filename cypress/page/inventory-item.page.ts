@@ -19,7 +19,7 @@ class AddProductToCart{
         cy.get(this.addToCartButton).click();// (4)
     }
 
-    public RemoveProductFromCart(): void {
+    public removeProductFromCart(): void {
         cy.get(this.removeButton).click();// (4)
     }
 
