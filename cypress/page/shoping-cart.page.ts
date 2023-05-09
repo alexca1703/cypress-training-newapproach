@@ -8,6 +8,10 @@ class SauceCart{
     public proceedToCheckout(): void {
         cy.get(this.checkoutButton).click();// (6)
     }
+
+    public checkCartUrl(shoppingCartUrl: string): void {
+        cy.url().should('eq', shoppingCartUrl);
+    }
 }
 
 export {SauceCart}

@@ -19,6 +19,22 @@ class SauceCheckoutInformation {
         cy.get(this.postalCodeTextField).type(zipCodeValue);// (9)
         cy.get(this.continueCheckoutButton).click();// (10)
     }
+
+    public checkUserDetailsUrl(urlInv:string): void {
+        cy.url().should('eq', urlInv);
+    }
+
+    public verifyFirstNameFieldExists(): void{
+        cy.get(this.firstNameTextField).should('exist');
+    }
+
+    public verifyLastNameFieldExists(): void{
+        cy.get(this.lastNameTextField).should('exist');
+    }
+
+    public verifyPostalCodeeFieldExists(): void{
+        cy.get(this.postalCodeTextField).should('exist');
+    }
 }
 
 export {SauceCheckoutInformation}
