@@ -11,15 +11,15 @@ class SauceStandardLogin {
     }
 
     public typeUserName(userName:string): void{
-        cy.get(this.standardUserTextField).last().type(userName); // (2)
+        cy.get(this.standardUserTextField).last().type(userName);
     }
 
     public typePassword(password:string): void{
-        cy.get(this.standardPswrdTextField).last().type(password); // (2)
+        cy.get(this.standardPswrdTextField).last().type(password);
     }
     
     public pressSubmitButton(): void{
-        cy.get(this.submitCredentialsButton).click(); // (2)
+        cy.get(this.submitCredentialsButton).click();
     }
 }
 

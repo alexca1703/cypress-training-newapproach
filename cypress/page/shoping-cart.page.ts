@@ -6,7 +6,7 @@ class SauceCart{
     }
 
     public proceedToCheckout(): void {
-        cy.get(this.checkoutButton).click();// (6)
+        cy.get(this.checkoutButton).click();
     }
 
     public checkCartUrl(shoppingCartUrl: string): void {

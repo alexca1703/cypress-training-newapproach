@@ -7,7 +7,7 @@ class FinishCheckout{
     }
 
     public confirmSuccessfulCheckout(expectedText:string): void {
-        cy.get(this.messageElement).should('have.text', expectedText); // (12)
+        cy.get(this.messageElement).should('have.text', expectedText);
     }
 }
 

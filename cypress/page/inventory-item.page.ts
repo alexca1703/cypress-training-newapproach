@@ -16,15 +16,15 @@ class AddProductToCart{
     }
 
     public addProductToCart(): void {
-        cy.get(this.addToCartButton).click();// (4)
+        cy.get(this.addToCartButton).click();
     }
 
     public removeProductFromCart(): void {
-        cy.get(this.removeButton).click();// (4)
+        cy.get(this.removeButton).click();
     }
 
     public goToCartPage(): void {
-        cy.get(this.cartButton).click();// (5)
+        cy.get(this.cartButton).click();
     }
 
     public verifyItemPrice(price:string, fullPriceText:string){

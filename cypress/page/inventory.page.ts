@@ -10,7 +10,7 @@ class SauceInventory{
     }
 
     public openProductDetails(): void {
-        cy.contains(this.shirtSelection).click();// (3)
+        cy.contains(this.shirtSelection).click();
     }
 
     public checkInventoryUrl(urlInv:string): void {
