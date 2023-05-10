@@ -7,7 +7,7 @@ class CheckoutOverview{
     }
 
     public acceptCheckoutDetails(): void {
-        cy.get(this.finishCheckoutButton).click();// (11)
+        cy.get(this.finishCheckoutButton).click();
     }
 }
 

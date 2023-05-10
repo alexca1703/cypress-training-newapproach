@@ -14,10 +14,26 @@ class SauceCheckoutInformation {
     }
 
     public enterUserInformation(firstNameValue:string, lastNameValue:string, zipCodeValue:string): void {
-        cy.get(this.firstNameTextField).type(firstNameValue);// (7)
-        cy.get(this.lastNameTextField).type(lastNameValue);// (8)
-        cy.get(this.postalCodeTextField).type(zipCodeValue);// (9)
-        cy.get(this.continueCheckoutButton).click();// (10)
+        cy.get(this.firstNameTextField).type(firstNameValue);
+        cy.get(this.lastNameTextField).type(lastNameValue);
+        cy.get(this.postalCodeTextField).type(zipCodeValue);
+        cy.get(this.continueCheckoutButton).click();
+    }
+
+    public checkUserDetailsUrl(urlInv:string): void {
+        cy.url().should('eq', urlInv);
+    }
+
+    public verifyFirstNameFieldExists(): void{
+        cy.get(this.firstNameTextField).should('exist');
+    }
+
+    public verifyLastNameFieldExists(): void{
+        cy.get(this.lastNameTextField).should('exist');
+    }
+
+    public verifyPostalCodeeFieldExists(): void{
+        cy.get(this.postalCodeTextField).should('exist');
     }
 }
 

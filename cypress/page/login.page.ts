@@ -10,10 +10,16 @@ class SauceStandardLogin {
         this.submitCredentialsButton = '[data-test="login-button"]';
     }
 
-    public signIn(userName:string, password:string): void {
-        cy.get(this.standardUserTextField).first().type(userName); // (2)
-        cy.get(this.standardPswrdTextField).last().type(password); // (2)
-        cy.get(this.submitCredentialsButton).click(); // (2)
+    public typeUserName(userName:string): void{
+        cy.get(this.standardUserTextField).last().type(userName);
+    }
+
+    public typePassword(password:string): void{
+        cy.get(this.standardPswrdTextField).last().type(password);
+    }
+    
+    public pressSubmitButton(): void{
+        cy.get(this.submitCredentialsButton).click();
     }
 }
 
