@@ -32,7 +32,7 @@ describe("Check items number in shopping cart icon", () => {
     loginPage.typeUserName("standard_user");
     loginPage.typePassword("secret_sauce");
     loginPage.pressSubmitButton();
-    inventoryPage.openProductDetails();
+    inventoryPage.openProductDetails("Sauce Labs Bolt T-Shirt");
     inventoryDetailsPage.addProductToCart();
     // Assert
     inventoryDetailsPage.verifyItemPrice("15.99", "$15.99");
@@ -49,7 +49,7 @@ describe("Remove product item from shopping cart", () => {
     loginPage.typeUserName("standard_user");
     loginPage.typePassword("secret_sauce");
     loginPage.pressSubmitButton();
-    inventoryPage.openProductDetails();
+    inventoryPage.openProductDetails("Sauce Labs Bolt T-Shirt");
     inventoryDetailsPage.addProductToCart();
     inventoryDetailsPage.removeProductFromCart();
     // Assert
@@ -66,7 +66,7 @@ describe("Add Black T-shirt product to Shopping Cart", () => {
     loginPage.typeUserName("standard_user");
     loginPage.typePassword("secret_sauce");
     loginPage.pressSubmitButton();
-    inventoryPage.openProductDetails();
+    inventoryPage.openProductDetails("Sauce Labs Bolt T-Shirt");
     inventoryDetailsPage.addProductToCart();
     inventoryDetailsPage.goToCartPage();
     // Assert
@@ -82,7 +82,7 @@ describe("Confirm checkout to enter user information", () => {
     loginPage.typeUserName("standard_user");
     loginPage.typePassword("secret_sauce");
     loginPage.pressSubmitButton();
-    inventoryPage.openProductDetails();
+    inventoryPage.openProductDetails("Sauce Labs Bolt T-Shirt");
     inventoryDetailsPage.addProductToCart();
     inventoryDetailsPage.goToCartPage();
     shoppingCartPage.proceedToCheckout();
@@ -103,7 +103,7 @@ describe("Buy a black t-shirt successfully", () => {
     loginPage.typeUserName("standard_user");
     loginPage.typePassword("secret_sauce");
     loginPage.pressSubmitButton();
-    inventoryPage.openProductDetails();
+    inventoryPage.openProductDetails("Sauce Labs Bolt T-Shirt");
     inventoryDetailsPage.addProductToCart();
     inventoryDetailsPage.goToCartPage();
     shoppingCartPage.proceedToCheckout();
