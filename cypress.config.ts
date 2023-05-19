@@ -14,4 +14,15 @@ export default defineConfig({
      return config;
     },
   },
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+  reporterEnabled: "mochawesome",
+  mochawesomeReporterOptions: {
+    reportDir: "cypress/reports/mocha",
+    quiet: true,
+    overwrite: false,
+    html: false,
+    json: true,
+    },
+  },
 });
