@@ -4,21 +4,15 @@
   "description": "This is a Workshop about Cypress",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "rm -rf cypress/reports && mkdir cypress/reports",
-    "clean:reportsWindows": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports",
+    "clean:reports": "rm -rf cypress/reports/* || true",
     "test": "cypress run --headless --browser chrome",
-    "testWindows": "cypress run --headless --browser chrome",
     "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/e2e/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
-    "combine:reportsWindows": "mochawesome-merge cypress\\reports\\mocha\\*.json > cypress\\reports\\report.json",
     "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
-    "generate:reportsWindows": "marge cypress\\reports\\report.json -f report -o cypress\\reports",
     "pretest": "npm run clean:reports",
-    "pretestWindows": "npm run clean:reportsWindows",
-    "posttest": "npm run combine:reports && npm run generate:reports",
-    "posttestWindows": "npm run combine:reportsWindows && npm run generate:reportsWindows"
+    "posttest": "npm run combine:reports && npm run generate:reports"
   },
   "repository": {
     "type": "git",
