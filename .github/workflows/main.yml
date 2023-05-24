@@ -1,6 +1,6 @@
 name: Continuous integration
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   cypress-run:
@@ -21,8 +21,14 @@ jobs:
       - name: Code style
         run: npm run lint
 
+      - name: Pre Hook Execution
+        run: npm run clean:reports
+
       - name: UI E2E Tests
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
           headed: true
+      
+      - name: Post Hook Execution
+        run: npm run combine:reports && npm run generate:reports
